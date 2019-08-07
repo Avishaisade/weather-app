@@ -4,36 +4,78 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" type="text/css" media="screen" href="./sass/nain.css">
     <script src="https://kit.fontawesome.com/46b964823d.js"></script>
+    <script src="./scripts.js"></script>
     <title>weather-app</title>
 </head>
 <body>
-    <div class="form-group fg--search">
-            <input type="text" class="input" placeholder="Search another city">
+     <div class="app">       
+        <div class="lens-flare">
+            <div class="source-spread"></div>
+            <div class="source"></div>
+            <div class="source-beam"></div>
+            <div class="c1"></div>
+            <div class="c2"></div>
+            <div class="c3"></div>
+            <div class="c4"></div>
+            <div class="c5"></div>
+        </div>
+        <div class="form-search">
             <button type="submit"><i class="fa fa-search" aria-hidden="true"></i></button>
-    </div>
-    <div class="today">
-        NEW YORK <br>
-        today <br>
-        23° 
-    </div>   
-    <div class="second day">
-        monday <br>
-        <i class="far fa-sun"></i> <br>
-        26°/19°<br>
-        sunny
-    <div class="second day">
-        tuesday <br>
-        <i class="fas fa-cloud-rain"></i> <br>
-        20°/12° <br>
-        rain
-    </div>
-    <div class="second day">
-        wednesday <br>
-        <i class="fas fa-cloud-sun-rain"></i> <br>
-        14°/6° <br>
-        cloudy
-    </div>  
+            <input type="text" class="input" placeholder="Search another city">
+        </div>
+        <div class="container">
+            <div class="today">
+                <h3 >NEW YORK
+                 <br>
+                today <br>
+                </h3>
+                <h1>23° </h1> 
+                <h3>sunny</h3>
+                
+            </div> 
+            <div class="days-display">
+                <div class="days-container">
+                    <div class="day">
+                        monday <br>
+                        <i class="far fa-sun"></i> <br>
+                        26°/19°<br>
+                        sunny
+                    </div>
+                    <div class="day">
+                        tuesday <br>
+                        <i class="fas fa-cloud-rain"></i> <br>
+                        20°/12° <br>
+                        rain
+                    </div>
+                    <div class="day">
+                        wednesday <br>
+                        <i class="fas fa-cloud-sun-rain"></i> <br>
+                        14°/6° <br>
+                        cloudy
+                    </div>  
+                    <div class="day">
+                        thursday <br>
+                        <i class="fas fa-cloud-rain"></i> <br>
+                        22c°/7° <br>
+                        rain
+                    </div>  
+                    <div class="day">
+                        friday <br>
+                        <i class="fas fa-cloud-sun-rain"></i> <br>
+                        15°/7° <br>
+                        cloudy
+                    </div>  
+                    <div class="day">
+                        saturday <br>
+                        <i class="far fa-sun"></i> <br>
+                        11°/6° <br>
+                        sunny
+                    </div>
+                </div>
+            </div>
+        </div> 
     </div> 
 </body>
 </html>
