@@ -1,8 +1,9 @@
 // COLORS
 $color-primary: rgb(7, 10, 122);
-$color-primary-light:rgb(122, 124, 187);
-$color-white: rgb(192, 192, 192);
+$color-primary-light:rgb(196, 198, 248);
+$color-white: rgb(255, 255, 255);
 $days-color:rgba(248, 240, 240, 0.2);
+$search-color: rgb(0, 0, 0);
 
 // FONT
 $default-font-size: 1.6rem;
@@ -23,4 +24,9 @@ $grid-height: 40rem;
 
 html {
     font-size: 65%; 
+    
+    @include for-size(phone-only) { 
+        font-size: 50%;   
+    }
+    
 }

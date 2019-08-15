@@ -12,23 +12,39 @@
     width: $grid-width;
     color: $color-white;
     background-color: $color-primary;
-    background: linear-gradient(90deg, $color-primary 50%, $color-primary-light 150%);  
+    background: linear-gradient(90deg, $color-primary 50%, $color-primary-light 150%); 
+
+    @include for-size(phone-only) {
+      display: grid; 
+      grid-template-rows: 1fr 1.5fr 5fr; 
+      grid-template-columns: 1fr;
+      grid-template-areas: 
+      "search"
+      "today"  
+      "days-display";
+      top: 0;
+      left: 0;
+      position: fixed;
+      width: 100%;
+      height: 100%; 
+    }       
 }
 .form-search{
-      grid-area: search;
-      justify-self:end ;
-      margin: 5rem;
+    grid-area: search;
+    justify-self:end ;
+    margin: 5rem;
+    @include for-size(phone-only) {
+      justify-self:center ;
+    }
 }
 input[type=text] {
   padding:1rem; 
   background:$color-primary-light; 
-  // border: 0.01rem solid $color-white;
   border-color: transparent;
-  // cursor:pointer;
   padding-left: 50px;
 }
 .search-button{
-  color:$color-white;
+  color:$search-color;
   position:absolute;
   margin-top:10px;
   margin-left:10px;
@@ -39,9 +55,19 @@ input[type=text] {
 }
   .days-container{
     @include flex(row);
-    height: $grid-width/4;
+    height: $grid-height/2;
     width: $grid-width *1.3;
-    transform: translate(20%, 0);   
+    transform: translate(25%, 0);   
+
+    @include for-size(phone-only) {  
+      @include flex(column); 
+      height: 100%;
+      width: 100%;
+      transform: translate(0, 40%)
+      // position: absolute;
+      //  top: 50rem;
+      // right: 8rem;
+  }
   }
   
   .days-display{
@@ -50,17 +76,49 @@ input[type=text] {
     height: $grid-height/2;
     width: $grid-width/1.5;
     overflow: hidden; 
+
+    @include for-size(phone-only) { 
+      @include flex(column); 
+      height: 100%;
+      width: 100%;
+  }
+
   }
   .day{
-      margin: 2rem;
+      margin: 1rem;
       background-color: $days-color;
-      height:$grid-height/2.8;
+      height:$grid-height/2.5;
       width: $grid-width/4;
       font-size: 1.2rem;
+      @include for-size(phone-only) {  
+        height:$grid-width/2;
+        width: $grid-width/3;
+        margin: 2rem;
+        justify-content: space-between;
+        font-size: 1.5rem;
+      }
+      h2{
+        font-size: 200%; 
+        margin-left: 2rem;
+        @include for-size(phone-only) {
+          margin-left: 4rem;
+        }
+      }
+      .fas{
+        font-size: 400%;
+        margin: 1rem 3rem;
+    
+        @include for-size(phone-only) {  
+          margin-left: 8rem;
+          font-size: 500%;
+        }
+        
+      }
   }
   h1,h2,h3,h4{
     font-weight: 300;
     font-family: $font-family;
+    margin: 0.5rem;
   }
   
   .today{
@@ -70,36 +128,53 @@ input[type=text] {
     width: $grid-height/2;
     margin-left: 3rem; 
     font-size: 2rem;
-    &h1{
-      margin:1rem 1rem;
+    @include for-size(phone-only) { 
+      font-size: 1.5rem;
+      margin-top: -25px;
+      @include flex(column);   
     }
-    &h2{
-      font-size: 80%;
+
+    h1{
+      font-size: 350%;
+      margin-left: 2rem;
+      margin-top: 3rem;
+      @include for-size(phone-only) {
+        font-size: 450%; 
+        margin-top: 1rem;
+      }
     }
+  
   }
   .button{
-    font-size: 1rem;
+    font-size: 0.5rem;
     color: white;
     background-color: transparent;
     border: none;
-    margin-bottom:0.5rem;
+    margin-bottom: 0.5rem;
     cursor:pointer;
     
     &.left{
       transform: translate(330px, -90px);
       visibility: hidden;
+      font-size: 2rem;
+
+      @include for-size(phone-only) {  
+        position: absolute;
+        top: 30rem;
+        font-size: 4rem;
+        transform: rotate(90deg);
+      }
     }
     &.right{
       transform: translate(760px, -90px);  
       visibility: none;
+      font-size: 2rem;
+
+      @include for-size(phone-only) {  
+        position: absolute;
+        bottom: 0;
+        font-size: 4rem;
+        transform: rotate(90deg);
+      }
     }
   }
-  .fas{
-    font-size: 400%;
-    margin: 1rem 3rem;
-  }
-
-
-  
-
-  
